@@ -1,0 +1,18 @@
+{
+  "author" : "Tim Woldt",
+  "name": "lan chat",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron-prebuilt": "^1.0.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "jquery": "^2.2.3"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "author" : "Tim Woldt",
+  "author": "Tim Woldt",
   "name": "lan-chat",
   "version": "1.0.0",
   "description": "A minimal Electron application",

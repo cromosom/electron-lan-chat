@@ -38,6 +38,7 @@ const chat = (function () {
   }
 
   function recive (msg) {
+    console.log(domStack.chatField);
     domStack.chatField.append(msg)
   }
 

@@ -1,6 +1,7 @@
 const $ = require('jquery')
 const http = require('http')
 const io = require('socket.io-client')
+const ipc = require('electron').ipcRenderer
 
 const chat = (function () {
 
@@ -24,6 +25,8 @@ const chat = (function () {
   function bindEvents() {
     domStack.chatSend.on('click', sendMessage)
 
+    ipc.on('send-message', recive);
+
     // socket.on('news', function (data) {
     //   console.log(data);
     //   sendMessage()
@@ -35,10 +38,11 @@ const chat = (function () {
 
     console.log(chatInputMsg);
     socket.emit('my other event', { my: chatInputMsg });
+    ipc.send('get-message', chatInputMsg)
   }
 
-  function recive (msg) {
-    console.log(domStack.chatField);
+  function recive (event, msg) {
+    console.log(msg);
     domStack.chatField.append(msg)
   }
 

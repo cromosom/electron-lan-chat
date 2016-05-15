@@ -4,6 +4,7 @@ const server = express()
 const http = require('http').Server(server)
 const io = require('socket.io')(http)
 const port = process.env.PORT || 8080
+const chat = require('../view/ui-chat.js')
 
 server.get('/', function(req, res){
   res.send('<h1>Hello world</h1>');
@@ -21,6 +22,6 @@ io.on('connection', function(socket){
   console.log('a user connected');
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
-    console.log(data);
+    chat.send(data)
   });
 })

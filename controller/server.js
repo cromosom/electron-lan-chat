@@ -2,7 +2,7 @@ const ipc = require('electron').ipcMain
 const express = require('express')
 const server = express()
 const http = require('http').Server(server)
-const io = require('socket.io').(http)
+const io = require('socket.io')(http)
 const port = process.env.PORT || 8080
 
 server.get('/', function(req, res){
